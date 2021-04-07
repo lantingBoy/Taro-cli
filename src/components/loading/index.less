@@ -1,0 +1,51 @@
+.loading-comp{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  width: 100px;
+  height: 100px;
+  z-index: 99;
+  display: none;
+  &.active {
+    display: block;
+  }
+  .loading-box{
+    width: 100px;
+    height: 100px;
+    border: 10px solid #000000;
+    border-radius: 50%;
+    opacity: 0.1;
+  }
+  .s-fs-100{
+    font-size: 100px;
+  }
+  .icon-loading{
+    position: absolute;
+    right: 0;
+    top: 0;
+    animation: 0.6s linear rotateInfinite infinite;
+    transform-origin: center center;
+  }
+}
+@keyframes rotateInfinite {
+  0% { transform: rotateZ(0) }
+  50% { transform: rotateZ(180deg) }
+  100% { transform: rotateZ(360deg) }
+}
+
+.inline-loading {
+  display: inline-block;
+  line-height: 32px;
+  visibility: hidden;
+
+  &.active {
+    visibility: visible;
+  }
+  
+  .icon-loading {
+    font-size: 32px;
+    animation: 0.5s linear rotateInfinite infinite;
+    transform-origin: center center;
+  }
+}
